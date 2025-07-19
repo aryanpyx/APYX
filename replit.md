@@ -27,9 +27,10 @@ The application follows a full-stack architecture with clear separation between 
 
 ### Database Layer
 - **ORM**: Drizzle ORM with PostgreSQL dialect
-- **Database**: Configured for PostgreSQL (Neon Database)
+- **Database**: PostgreSQL (Replit Database) - ACTIVE
 - **Migrations**: Managed through Drizzle Kit
-- **Storage Abstraction**: Interface-based storage layer with in-memory fallback
+- **Storage**: DatabaseStorage class implementing full CRUD operations
+- **Tables**: Users, Conversations, Reminders, Notes with proper relationships
 
 ## Key Components
 
@@ -73,9 +74,10 @@ The application follows a full-stack architecture with clear separation between 
 - **Error Handling**: Graceful fallbacks for API failures
 
 ### Database
-- **Neon Database**: Serverless PostgreSQL hosting
-- **Connection**: Environment-based connection string
-- **Schema**: User conversations, reminders, and notes storage
+- **Replit PostgreSQL**: Managed PostgreSQL database
+- **Connection**: Environment-based connection string (DATABASE_URL)
+- **Schema**: User conversations, reminders, and notes with persistent storage
+- **Status**: Fully operational with real-time data persistence
 
 ### Browser APIs
 - **Web Speech API**: For voice recognition functionality

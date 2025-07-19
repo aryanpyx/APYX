@@ -74,6 +74,10 @@
     cursor: default !important;
     --tw-ring-shadow: none;
     --tw-ring-offset-shadow: none;
+  }
+
+  /* Hide cursor only on non-input elements */
+  div, span, p, h1, h2, h3, h4, h5, h6, button, a, nav, header, footer, section, article {
     caret-color: transparent;
   }
 
@@ -84,7 +88,7 @@
   input[type="search"], 
   textarea {
     cursor: text !important;
-    caret-color: auto;
+    caret-color: auto !important;
   }
 
   /* Pointer cursor for interactive elements */

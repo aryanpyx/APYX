@@ -1,0 +1,27 @@
+{
+  "name": "APYX - Multilingual Voice AI Assistant",
+  "short_name": "APYX",
+  "description": "A JARVIS-like AI assistant supporting English, Hindi, and Bhojpuri with voice capabilities",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1117",
+  "theme_color": "#00D4FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTI4IiBmaWxsPSIjMEQxMTE3Ii8+CjxjaXJjbGUgY3g9IjI1NiIgY3k9IjE4NCIgcj0iNDgiIGZpbGw9IiMwMEQ0RkYiLz4KPGVsbGlwc2UgY3g9IjI1NiIgY3k9IjM2MCIgcng9IjgwIiByeT0iMTYiIGZpbGw9IiMwMEQ0RkYiLz4KPHBhdGggZD0iTTIwOCAzMjBMMjU2IDI4MEwzMDQgMzIwSDIwOFoiIGZpbGw9IiMwMEQ0RkYiLz4KPHRleHQgeD0iMjU2IiB5PSI0NDAiIGZpbGw9IiMwMEQ0RkYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BUFlYPC90ZXh0Pgo8L3N2Zz4K",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iNDgiIGZpbGw9IiMwRDExMTciLz4KPGNpcmNsZSBjeD0iOTYiIGN5PSI2OCIgcj0iMTgiIGZpbGw9IiMwMEQ0RkYiLz4KPGVsbGlwc2UgY3g9Ijk2IiBjeT0iMTM0IiByeD0iMzAiIHJ5PSI2IiBmaWxsPSIjMDBENEZGIi8+CjxwYXRoIGQ9Ik03OCAxMTlMOTYgMTA0TDExNCAxMTlINzhaIiBmaWxsPSIjMDBENEZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSIxNjQiIGZpbGw9IiMwMEQ0RkYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BUFlYPC90ZXh0Pgo8L3N2Zz4K",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "en",
+  "scope": "/",
+  "prefer_related_applications": false
+}

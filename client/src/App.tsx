@@ -21,8 +21,10 @@ function App() {
     const preventUnwantedFocus = (e: FocusEvent) => {
       const target = e.target as HTMLElement;
       
-      // Allow focus only on actual input elements
-      if (target && !['INPUT', 'TEXTAREA', 'BUTTON', 'A'].includes(target.tagName)) {
+      // Allow focus only on actual interactive elements
+      if (target && !['INPUT', 'TEXTAREA', 'BUTTON', 'A', 'SELECT'].includes(target.tagName) && 
+          !target.hasAttribute('tabindex') && 
+          !target.getAttribute('role')) {
         target.blur();
       }
     };

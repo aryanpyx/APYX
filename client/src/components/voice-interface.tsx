@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input"; // Replaced with native input
 import { Card } from "@/components/ui/card";
 import { Mic, MicOff, Send, Volume2 } from "lucide-react";
 import { useSpeech } from "@/hooks/use-speech";
@@ -112,14 +112,15 @@ export default function VoiceInterface({ language }: VoiceInterfaceProps) {
         <Card className="backdrop-blur-lg bg-slate-900/80 border-cyan-500/20 p-4">
           <div className="flex items-center space-x-4">
             <div className="flex-1">
-              <Input
+              <input
                 type="text"
                 placeholder={getPlaceholder()}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="bg-transparent border-none outline-none text-lg text-slate-200 placeholder-slate-500"
+                onKeyDown={handleKeyPress}
+                className="w-full bg-transparent border-none outline-none ring-0 focus:ring-0 focus:outline-none focus:border-none text-lg text-slate-200 placeholder-slate-500 caret-cyan-400 h-10 px-0"
                 disabled={chatMutation.isPending}
+                style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
               />
             </div>
             

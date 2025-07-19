@@ -1,0 +1,179 @@
+Use This to Build APYX (JARVIS-like AI Assistant)
+Title:
+🧠 APYX – Multilingual Voice AI Assistant (Hindi, Bhojpuri, English)
+
+Description:
+APYX is a smart AI assistant that understands voice commands and responds like Iron Man’s JARVIS. Built for both PC and mobile, APYX supports multilingual conversation (English, Hindi, Bhojpuri), voice output, and a British accent personality.
+
+💡 Features to Include:
+🎤 Voice Input:
+Activate microphone on tap
+
+Use browser/device speech-to-text
+
+Detect commands like:
+
+"What's the weather?"
+
+"Remind me to drink water"
+
+"अपना नाम क्या है?" or "तू का कर रहल बा?"
+
+🔊 Voice Response:
+Speak results back in a polite, British-style voice
+
+Use Text-to-Speech (TTS) for:
+
+ChatGPT replies
+
+Alerts and reminders
+
+Language-based voice switch (English, Hindi, Bhojpuri)
+
+🧠 GPT Integration:
+Connect to GPT-4 or GPT-3.5 via API (or use built-in LLM)
+
+Handle:
+
+Chat
+
+Knowledge Q&A
+
+Translations
+
+Fun or assistant-like conversations
+
+🌐 Platform:
+Works on both:
+
+PC/Laptop (web app)
+
+Android/iOS (PWA or app builder export)
+
+Installable (Add to Home Screen or Desktop)
+
+🈺 Language Support:
+Default: English
+
+Auto-detect Hindi / Bhojpuri
+
+Reply back in same language
+
+👤 Personality:
+Assistant name: APYX
+
+British polite tone: "Of course, Aryan." / "Certainly, here's what I found."
+
+Custom greetings:
+
+"Good Morning, Aryan."
+
+"क्या हाल बा आज?"
+
+🔧 Optional Add-Ons:
+Dark/Light mode toggle
+
+Notes or Reminders
+
+Joke/Fun mode
+
+System commands (play music, search YouTube, etc.)
+
+🛠 Deployment Settings (Optional if using no-code builder):
+Framework: Next.js or Flutter Web
+
+Hosting: Vercel / Firebase / TRAE
+
+Enable microphone + speaker permissions
+
+API Key for GPT (optional: OpenRouter / OpenAI)
+
+✅ How to Use:
+Go to https://trae.ai or your preferred app builder
+
+Create new agent/project
+
+Paste the above prompt exactly
+
+Customize if needed
+
+Build and deploy
+
+Share or install on your phone/PC as a Progressive Web App
+
+Let me know if you want me to host and deploy this for you with a custom UI.
+Otherwise, you can start building it using this full prompt right now!
+
+🚀 Ready to bring APYX to life?
+
+
+
+
+
+
+
+
+You said:
+if i will make it in firebox studio then what i have to choose like optiions are flutter or etc. 
+
+
+ChatGPT said:
+Great question, Aryan!
+
+If you're planning to build APYX in Firebase Studio (or a similar AI-powered app builder), here's what you should choose depending on your goals:
+
+✅ Best Options to Choose in Firebase Studio:
+🔧 1. Framework / Build Type
+Choose:
+
+✅ Flutter
+
+Why?
+
+Flutter supports voice input/output
+
+It works on both Android & Web
+
+Easy to customize UI like Iron Man's JARVIS
+
+Has access to native features like microphone & TTS
+
+🌐 2. Platform
+Enable:
+
+✅ Android
+
+✅ Web (for PC use as PWA)
+
+(Optional: iOS, if you want Apple support)
+
+📱 3. Permissions
+Make sure you allow:
+
+✅ Microphone (for voice input)
+
+✅ Speaker (for voice output)
+
+✅ Internet (for GPT API access)
+
+🔑 4. AI Engine
+Choose:
+
+✅ GPT-4 or GPT-3.5 (OpenAI or OpenRouter)
+
+You’ll need to connect your OpenAI API key, or ask me to set it up for you
+
+🧠 5. Input/Output Mode
+Set:
+
+✅ Input: Voice + Text
+
+✅ Output: Text + Voice
+
+Enable language detection or create a toggle for:
+
+English
+
+Hindi
+
+Bhojpuri

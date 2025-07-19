@@ -1,4 +1,6 @@
 import { conversations, reminders, notes, users, type User, type InsertUser, type Conversation, type InsertConversation, type Reminder, type InsertReminder, type Note, type InsertNote } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -146,4 +148,115 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// Database storage implementation
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async createConversation(insertConversation: InsertConversation): Promise<Conversation> {
+    const [conversation] = await db
+      .insert(conversations)
+      .values(insertConversation)
+      .returning();
+    return conversation;
+  }
+
+  async getConversations(userId?: number, limit = 50): Promise<Conversation[]> {
+    if (userId) {
+      return await db.select()
+        .from(conversations)
+        .where(eq(conversations.userId, userId))
+        .orderBy(conversations.timestamp)
+        .limit(limit);
+    }
+    
+    return await db.select()
+      .from(conversations)
+      .orderBy(conversations.timestamp)
+      .limit(limit);
+  }
+
+  async createReminder(insertReminder: InsertReminder): Promise<Reminder> {
+    const [reminder] = await db
+      .insert(reminders)
+      .values(insertReminder)
+      .returning();
+    return reminder;
+  }
+
+  async getReminders(userId?: number): Promise<Reminder[]> {
+    if (userId) {
+      return await db.select()
+        .from(reminders)
+        .where(eq(reminders.userId, userId))
+        .orderBy(reminders.scheduledFor);
+    }
+    
+    return await db.select()
+      .from(reminders)
+      .orderBy(reminders.scheduledFor);
+  }
+
+  async updateReminder(id: number, updates: Partial<Reminder>): Promise<Reminder | undefined> {
+    const [reminder] = await db
+      .update(reminders)
+      .set(updates)
+      .where(eq(reminders.id, id))
+      .returning();
+    return reminder || undefined;
+  }
+
+  async createNote(insertNote: InsertNote): Promise<Note> {
+    const [note] = await db
+      .insert(notes)
+      .values(insertNote)
+      .returning();
+    return note;
+  }
+
+  async getNotes(userId?: number): Promise<Note[]> {
+    if (userId) {
+      return await db.select()
+        .from(notes)
+        .where(eq(notes.userId, userId))
+        .orderBy(notes.createdAt);
+    }
+    
+    return await db.select()
+      .from(notes)
+      .orderBy(notes.createdAt);
+  }
+
+  async updateNote(id: number, updates: Partial<Note>): Promise<Note | undefined> {
+    const [note] = await db
+      .update(notes)
+      .set(updates)
+      .where(eq(notes.id, id))
+      .returning();
+    return note || undefined;
+  }
+
+  async deleteNote(id: number): Promise<boolean> {
+    const result = await db
+      .delete(notes)
+      .where(eq(notes.id, id));
+    return (result.rowCount || 0) > 0;
+  }
+}
+
+export const storage = new DatabaseStorage();

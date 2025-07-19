@@ -69,32 +69,74 @@
     cursor: default;
   }
 
-  /* Fix cursor issue - only show text cursor on actual input fields */
-  div, span, p, h1, h2, h3, h4, h5, h6, button, a {
-    cursor: default;
-  }
-
-  input[type="text"], textarea {
-    cursor: text;
-  }
-
-  button {
-    cursor: pointer;
-  }
-
-  a {
-    cursor: pointer;
-  }
-
-  /* Remove focus rings that might look like cursors */
-  *:focus {
-    outline: none;
-  }
-
-  /* Ensure no unwanted ring effects */
+  /* Fix cursor issue - prevent text cursor everywhere except actual inputs */
   * {
+    cursor: default !important;
     --tw-ring-shadow: none;
     --tw-ring-offset-shadow: none;
+    caret-color: transparent;
+  }
+
+  /* Only show text cursor on actual text input elements */
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"], 
+  input[type="search"], 
+  textarea {
+    cursor: text !important;
+    caret-color: auto;
+  }
+
+  /* Pointer cursor for interactive elements */
+  button, 
+  a, 
+  [role="button"], 
+  .cursor-pointer,
+  [onclick],
+  [tabindex] {
+    cursor: pointer !important;
+  }
+
+  /* Remove all focus effects and prevent any focusable behavior */
+  *:focus,
+  *:focus-visible,
+  *:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+    border: inherit !important;
+    caret-color: transparent !important;
+  }
+
+  /* Prevent user selection and focus in most UI elements */
+  div, span, p, h1, h2, h3, h4, h5, h6, button, a, nav, header, footer, section, article {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* Remove tabindex from non-interactive elements */
+  div:not([role]):not([tabindex]), 
+  span:not([role]):not([tabindex]), 
+  p:not([role]):not([tabindex]) {
+    tabindex: -1;
+  }
+
+  /* Allow text selection only in content areas and inputs */
+  input, textarea, [contenteditable="true"] {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    caret-color: auto;
+  }
+
+  /* Ensure no hidden inputs or elements are causing issues */
+  input[type="hidden"], 
+  input[style*="display: none"], 
+  input[style*="visibility: hidden"] {
+    display: none !important;
   }
 }
 
